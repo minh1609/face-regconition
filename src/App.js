@@ -3,10 +3,10 @@ import FaceSample from "./FaceSample";
 
 const App = () => {
     return (
-        <React.Fragment>
+        <div className="container">
             <h1>Regkonition</h1>
             <FaceSample />
-        </React.Fragment>
+        </div>
     );
 };
 

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import AWS from "aws-sdk";
 import { rekognition } from "./aws-config";
 
 const FaceSample = () => {
     const [imageData, setImageData] = useState("");
-    const [result, setResult] = useState([{}]); //FaceDetail Array
+    const [result, setResult] = useState([{}]); //Array of FaceDetail Object
 
     const handleChange = e => {
         let params;
@@ -28,10 +27,20 @@ const FaceSample = () => {
         };
     };
 
+    const handleClick = () => {};
+
+    const renderResult = () => {
+        return <div>Hello</div>;
+    };
+
     return (
         <div>
             <p>Enter your file</p>
             <input type="file" onChange={handleChange} />
+            <button className="btn btn-primary" onClick={handleClick}>
+                Detect
+            </button>
+            {renderResult()}
         </div>
     );
 };

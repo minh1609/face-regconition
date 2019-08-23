@@ -1,12 +1,20 @@
 import React from "react";
-import FaceSample from "./FaceSample";
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+
+import ImageDetect from "./ImageDetect";
+import VideoDetect from "./VideoDetect";
 
 const App = () => {
     return (
-        <div className="container">
-            <h1>Regkonition</h1>
-            <FaceSample />
-        </div>
+        <BrowserRouter>
+            <div className="container">
+                <h1 className="mx-auto">Celebrities Regkonition</h1>
+                <Switch>
+                    <Route path="/" exact component={ImageDetect} />
+                    <Route path="/video" exact component={VideoDetect} />
+                </Switch>
+            </div>
+        </BrowserRouter>
     );
 };
 

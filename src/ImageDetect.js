@@ -67,7 +67,7 @@ const ImageDetect = () => {
         }
     }, [image, imageData]);
 
-    const renderResult = () => {
+    const renderSuccessResult = () => {
         if (result.CelebrityFaces) {
             return result.CelebrityFaces.map(e => (
                 <div
@@ -78,6 +78,17 @@ const ImageDetect = () => {
                     <div>Match: {e.MatchConfidence} %</div>
                 </div>
             ));
+        }
+    };
+
+    const renderFailResult = () => {
+        if (result.UnrecognizedFaces && result.UnrecognizedFaces.length > 0) {
+            return (
+                <div className="alert alert-danger">
+                    <strong>{result.UnrecognizedFaces.length}</strong> faces can
+                    not regconized
+                </div>
+            );
         }
     };
 
@@ -101,7 +112,8 @@ const ImageDetect = () => {
                 <br />
                 {RenderLoadingButton()}
             </div>
-            {renderResult()}
+            {renderSuccessResult()}
+            {renderFailResult()}
         </div>
     );
 };

@@ -74,7 +74,7 @@ const ImageDetect = () => {
                     key={e.Id}
                     className="d-flex justify-content-around alert alert-success mx-1"
                 >
-                    {e.Name}
+                    <strong>{e.Name}</strong>
                     <div>Match: {e.MatchConfidence} %</div>
                 </div>
             ));

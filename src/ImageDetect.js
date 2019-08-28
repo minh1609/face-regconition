@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { rekognition } from "./aws-config";
-import { Spinner } from "react-bootstrap";
+
 const ImageDetect = () => {
     const [image, setImage] = useState("");
     const [imageData, setImageData] = useState(""); //Data URL of image, use this to preview image

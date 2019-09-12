@@ -8,7 +8,7 @@ const App = () => {
     return (
         <HashRouter basename="/">
             <div className="container">
-                <h1 className="mx-auto my-4">Celebrities Regkonition</h1>
+                <h1 className="mx-auto my-4">Face Regkonition</h1>
                 <Switch>
                     <Route path="/" exact component={ImageDetect} />
                     <Route path="/video" exact component={VideoDetect} />

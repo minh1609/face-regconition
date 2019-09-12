@@ -2,15 +2,24 @@ import React, { useState, useEffect } from "react";
 import { rekognition } from "./aws-config";
 
 const ImageDetect = () => {
-    const [image, setImage] = useState("");
+    const [image, setImage] = useState(""); //image
     const [imageData, setImageData] = useState(""); //Data URL of image, use this to preview image
-
-    const [result, setResult] = useState([{}]); //Array of FaceDetail Object
+    const [result, setResult] = useState([{}]); //result from API call
     const [loading, setLoading] = useState(false);
 
     const handleChange = e => {
         setImage(e.target.files[0]);
     };
+
+    useEffect(() => {
+        if (image) {
+            let reader = new FileReader();
+            reader.readAsDataURL(image);
+            reader.onload = () => {
+                setImageData(reader.result);
+            };
+        }
+    }, [image, imageData]);
 
     const handleClick = () => {
         let reader = new FileReader();
@@ -21,7 +30,9 @@ const ImageDetect = () => {
         }
 
         reader.readAsArrayBuffer(image);
-        reader.onload = e => {
+
+        //process image and send request after image is loaded to FileReader
+        reader.onload = () => {
             let params = {
                 Image: {
                     Bytes: reader.result
@@ -56,16 +67,6 @@ const ImageDetect = () => {
             );
         }
     };
-
-    useEffect(() => {
-        if (image) {
-            let reader = new FileReader();
-            reader.readAsDataURL(image);
-            reader.onload = () => {
-                setImageData(reader.result);
-            };
-        }
-    }, [image, imageData]);
 
     const renderSuccessResult = () => {
         if (result.CelebrityFaces) {

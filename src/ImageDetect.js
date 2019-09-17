@@ -9,6 +9,7 @@ const ImageDetect = () => {
 
     const handleChange = e => {
         setImage(e.target.files[0]);
+        console.log("Image Info", e.target.files[0]);
     };
 
     useEffect(() => {
@@ -115,6 +116,8 @@ const ImageDetect = () => {
             </div>
             {renderSuccessResult()}
             {renderFailResult()}
+            <h4 style={{ marginTop: "15px" }}>How to use it</h4>
+            <img src={require("./face-reg.gif")} alt="demo" width={450} />
         </div>
     );
 };

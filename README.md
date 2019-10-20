@@ -1,7 +1,16 @@
-## Demonstration
+# Face Regconition
 
-Application build with React, AWS Rekonition services
+## Description
+
+Application helps recognize any famous people in the picture
+
+## Built with
+
+-   React
+-   AWS Rekonition services
+
+## Demo
 
 ![picture](./src/face-reg.gif)
 
-[Go to Project](https://minh1609.github.io/face-regconition/)
+[Live Demo](https://minh1609.github.io/face-regconition/)

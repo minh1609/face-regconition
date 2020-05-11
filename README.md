@@ -3,6 +3,7 @@
 ## Description
 
 Application helps recognize any famous people in the picture
+Simple Demo for React Hook: useState, useEffect
 
 ## Built with
 

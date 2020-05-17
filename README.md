@@ -3,7 +3,11 @@
 ## Description
 
 Application helps recognize any famous people in the picture
-Simple Demo for React Hook: useState, useEffect
+Simple Demo for
+
+-   React Hook: useState, useEffect
+-   Axios (api)
+-   AWS service
 
 ## Built with
 

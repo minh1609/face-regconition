@@ -87,8 +87,8 @@ const ImageRegco = () => {
         if (result.UnrecognizedFaces && result.UnrecognizedFaces.length > 0) {
             return (
                 <div className="alert alert-danger">
-                    <strong>{result.UnrecognizedFaces.length}</strong> faces can
-                    not regconized
+                    <strong>{result.UnrecognizedFaces.length}</strong> face(s) can
+                    not be regconized
                 </div>
             );
         }
